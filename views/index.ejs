@@ -1,0 +1,23 @@
+<!-- Instead of displaying json at your /pokemon route, you should serve an index.ejs file that displays a list of all the pokemon. Put the pokemon inside a <ul> with class name pokemon. You may want to look up how data can be sent from a server into a template using express.
+
+Add some style to your list with a style tag, or, for an added challenge, look up how to serve static files in an express app and use a separate css file instead.
+
+Stretch step, not required : Choose a google font and add it to your html and inside your <style> tag
+
+ -->
+ <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body>
+
+ <ul>
+<% pokemon.forEach(function(pokemones, index){%>
+	<li><a href="/pokemon/<%=index%>"><%=pokemones.name%></a></li>
+<%})%>
+</ul>
+
+</body>
