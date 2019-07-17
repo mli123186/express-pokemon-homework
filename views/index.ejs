@@ -13,11 +13,20 @@ Stretch step, not required : Choose a google font and add it to your html and in
 </head>
 
 <body>
-
+<nav>
+    <a href="/pokemon/new">Create a New Pokemon</a>
+ </nav>
  <ul>
 <% pokemon.forEach(function(pokemones, index){%>
-	<li><a href="/pokemon/<%=index%>"><%=pokemones.name%></a></li>
+	<li>
+		<a href="/pokemon/<%=index%>"><%=pokemones.name%></a>
+		<form action="/pokemon/<%=index%>?_method=DELETE" method="POST" >
+                    <input type="submit" value="DELETE"/>
+        </form>
+
+	</li>
 <%})%>
 </ul>
+ 
 
 </body>
